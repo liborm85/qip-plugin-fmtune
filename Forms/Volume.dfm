@@ -1,0 +1,90 @@
+object frmVolume: TfrmVolume
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Volume'
+  ClientHeight = 229
+  ClientWidth = 76
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object imgMute: TImage
+    Left = 28
+    Top = 160
+    Width = 16
+    Height = 16
+  end
+  object imgUnmute: TImage
+    Left = 31
+    Top = 2
+    Width = 16
+    Height = 16
+  end
+  object line: TShape
+    Left = -1
+    Top = 184
+    Width = 78
+    Height = 17
+    Brush.Color = clMenuHighlight
+  end
+  object lblVolume: TLabel
+    Left = 8
+    Top = 186
+    Width = 59
+    Height = 13
+    Alignment = taCenter
+    AutoSize = False
+    Caption = '000%'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object chkMute: TCheckBox
+    Left = 8
+    Top = 207
+    Width = 65
+    Height = 17
+    Caption = 'Mute'
+    Color = clBtnFace
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnClick = chkMuteClick
+    OnKeyPress = chkMuteKeyPress
+  end
+  object tbVolume: TTrackBar
+    Left = 16
+    Top = 14
+    Width = 45
+    Height = 150
+    Max = 100
+    Orientation = trVertical
+    Frequency = 10
+    ShowSelRange = False
+    TabOrder = 1
+    TickMarks = tmBoth
+    OnChange = tbVolumeChange
+    OnKeyPress = tbVolumeKeyPress
+  end
+  object Timer: TTimer
+    Interval = 5000
+    OnTimer = TimerTimer
+    Left = 48
+  end
+end

@@ -1,0 +1,162 @@
+object frmEqualizer: TfrmEqualizer
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = '...'
+  ClientHeight = 272
+  ClientWidth = 471
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblReverb: TLabel
+    Left = 428
+    Top = 152
+    Width = 35
+    Height = 13
+    Caption = 'Reverb'
+  end
+  object tbReverb: TTrackBar
+    Tag = 3
+    Left = 434
+    Top = 8
+    Width = 21
+    Height = 145
+    Max = 20
+    Orientation = trVertical
+    Frequency = 2
+    Position = 20
+    SelEnd = 20
+    SelStart = 20
+    TabOrder = 0
+    ThumbLength = 15
+    TickMarks = tmBoth
+    TickStyle = tsNone
+    OnChange = tbReverbChange
+  end
+  object pnlEq: TPanel
+    Left = 0
+    Top = 0
+    Width = 422
+    Height = 165
+    BevelOuter = bvNone
+    Ctl3D = True
+    ParentBackground = False
+    ParentCtl3D = False
+    TabOrder = 2
+  end
+  object btnReset: TBitBtn
+    Left = 385
+    Top = 208
+    Width = 75
+    Height = 25
+    Caption = 'Reset'
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 1
+    OnClick = btnResetClick
+  end
+  object btnOk: TBitBtn
+    Left = 385
+    Top = 239
+    Width = 75
+    Height = 25
+    Caption = 'Ok'
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 3
+    OnClick = btnOkClick
+  end
+  object gbOptions: TGroupBox
+    Left = 8
+    Top = 171
+    Width = 265
+    Height = 97
+    Caption = 'Nastaven'#237
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    object lblPreset: TLabel
+      Left = 17
+      Top = 67
+      Width = 31
+      Height = 13
+      Caption = 'Preset'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object cbOptions: TComboBox
+      Left = 54
+      Top = 64
+      Width = 89
+      Height = 19
+      Style = csOwnerDrawFixed
+      Ctl3D = True
+      DropDownCount = 12
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemHeight = 13
+      ParentCtl3D = False
+      ParentFont = False
+      TabOrder = 0
+      OnSelect = cbOptionsSelect
+    end
+    object chkEnableEqualizer: TCheckBox
+      Left = 17
+      Top = 21
+      Width = 142
+      Height = 17
+      Caption = 'Enable Equalizer'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = chkEnableEqualizerClick
+    end
+    object chkSetEqualizerToRadioGenre: TCheckBox
+      Left = 17
+      Top = 44
+      Width = 222
+      Height = 17
+      Caption = 'Set Equalizer according to radio genre'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = chkSetEqualizerToRadioGenreClick
+    end
+  end
+  object Timer: TTimer
+    Interval = 100
+    OnTimer = TimerTimer
+    Left = 312
+    Top = 200
+  end
+end
